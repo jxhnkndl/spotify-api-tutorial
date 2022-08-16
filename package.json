@@ -1,0 +1,20 @@
+{
+  "name": "spotify-api-tutorial",
+  "version": "1.0.0",
+  "description": "Learn how to configure and use Spotify's Web API using Node.js, Express, and React.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jxhnkndl/spotify-api-tutorial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jxhnkndl/spotify-api-tutorial/issues"
+  },
+  "homepage": "https://github.com/jxhnkndl/spotify-api-tutorial#readme"
+}
