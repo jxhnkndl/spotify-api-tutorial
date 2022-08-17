@@ -93,6 +93,35 @@ app.get('/callback', async (req, res) => {
   }
 });
 
+// AUTH FLOW 2.1:
+// refresh access token behind the scenes
+app.get('/refresh_token', async (req, res) => {
+
+  // extract refresh token value from query
+  const { refresh_token } = req.query;
+
+  try {
+    // use refresh token to request new access token
+    const response = await axios({
+      method: 'POST',
+      url: 'https://accounts.spotify.com/api/token',
+      data: new URLSearchParams({
+        grant_type: 'refresh_token',
+        refresh_token: refresh_token
+      }),
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded',
+        Authorization: `Basic ${Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64')}`
+      }
+    });
+
+    res.send(response.data);
+
+  } catch(err) {
+    res.send(err);
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
