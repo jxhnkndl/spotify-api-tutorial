@@ -6,8 +6,6 @@ const generateRandomString = length => {
     string += characters[Math.floor(Math.random() * characters.length)];
   }
 
-  console.log(string);
-
   return string;
 }
 
